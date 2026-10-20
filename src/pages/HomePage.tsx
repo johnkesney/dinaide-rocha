@@ -21,7 +21,7 @@ export function HomePage() {
         <div className="political-hero__content">
           <p className="political-hero__eyebrow">VEREADORA DE RIACHO DE SANTANA <span>BAHIA</span></p>
           <h1 id="political-hero-heading">DINAIDE<br/><span>ROCHA<span className="political-hero__dot">.</span></span></h1>
-          <p className="political-hero__subtitle">Uma trajetória para conhecer.<br/>Um mandato para acompanhar.</p>
+          <p className="political-hero__subtitle">Uma vida construída em Riacho de Santana.<br/>Uma trajetória de trabalho e atuação pública.</p>
           <div className="political-hero__buttons">
             <Link to="/biografia" className="political-button political-button--white">Conheça Dinaide <ArrowUpRight size={18} aria-hidden="true" /></Link>
             <Link to="/acoes" className="political-button political-button--hero-link">Acompanhe o mandato <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -40,12 +40,20 @@ export function HomePage() {
         <div className="political-intro__text">
           <span className="political-kicker">QUEM É DINAIDE ROCHA</span>
           <h2 id="political-intro-title">Conheça<br/>a vereadora<br/><span>Dinaide Rocha.</span></h2>
-          <p className="political-intro__lead">Conheça a pessoa e sua trajetória para além do cargo público.</p>
-          <p>Aqui você encontra informações sobre Dinaide Rocha, vereadora de Riacho de Santana, Bahia. Sua história será apresentada com base em registros e informações confirmados pela equipe.</p>
+          <p className="political-intro__lead">Do comércio à Câmara Municipal, uma trajetória construída com a família e com Riacho de Santana.</p>
+          <p>Natural de Canatiba (Betânia), Dinaide vive há mais de três décadas em Riacho de Santana. Começou no comércio da família, empreendeu ao lado do esposo e encontrou na política uma nova forma de participar da vida da cidade.</p>
+          <p>Hoje, sua atuação inclui pautas como inclusão, transparência e atenção às pessoas autistas e suas famílias.</p>
           <Link className="political-text-link" to="/historia">Leia sobre sua trajetória <ArrowUpRight aria-hidden="true" size={19} /></Link>
         </div>
       </div>
     </section>
+
+    {site.curiosities.length > 0 && <section className="political-facts" aria-labelledby="political-facts-title">
+      <div className="shell political-facts__inner">
+        <header className="political-facts__heading"><span className="political-kicker">VOCÊ SABIA?</span><h2 id="political-facts-title">Além do mandato,<br/>uma história de vida.</h2><Link className="political-text-link" to="/biografia">Leia a biografia completa <ArrowUpRight aria-hidden="true" size={19} /></Link></header>
+        <div className="political-facts__list">{site.curiosities.map((fact,index) => <article className="political-facts__item" key={fact.title}><span className="political-facts__number">{String(index+1).padStart(2,"0")}</span><div><h3>{fact.title}</h3><p>{fact.description}</p></div></article>)}</div>
+      </div>
+    </section>}
 
     <section className="political-mandate" aria-labelledby="political-mandate-title">
       <div className="shell political-mandate__container">

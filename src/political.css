@@ -326,3 +326,19 @@ body { color: var(--dr-ink); background: #fff; }
 @media (max-width: 390px) {
   .site-header--v2 .institutional-brand--official { width: 100px; }
 }
+
+/* Fatos biográficos: lista editorial, sem aparência de cartões de produto. */
+.political-facts { background: #faf8f9; padding: 82px 0 92px; }
+.political-facts__inner { display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 52%); justify-content: space-between; gap: 6%; }
+.political-facts__heading h2 { max-width: 450px; font-size: clamp(34px, 3.5vw, 54px); font-weight: 800; line-height: 1.12; letter-spacing: -.045em; margin: 15px 0 30px; }
+.political-facts__list { border-top: 1px solid #d9d1d5; }
+.political-facts__item { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 20px 0 22px; border-bottom: 1px solid #d9d1d5; }
+.political-facts__number { color: #e3006a; font-size: 13px; font-weight: 800; }
+.political-facts__item h3 { color: #292428; margin: 0 0 8px; font-size: 18px; font-weight: 800; }
+.political-facts__item p { color: #625d61; font-size: 14px; line-height: 1.65; margin: 0; max-width: 530px; }
+@media (max-width: 740px) {
+ .political-facts { padding: 58px 0 66px; }
+ .political-facts__inner { grid-template-columns: 1fr; gap: 30px; }
+ .political-facts__heading h2 { font-size: clamp(32px, 8vw, 46px); }
+ .political-facts__item { grid-template-columns: 38px 1fr; gap: 10px; }
+}

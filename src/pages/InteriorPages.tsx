@@ -27,7 +27,7 @@ function PageHero({ kind }: { kind: Kind }) {
 function Biography() {
   return <div className="shell interior-biography">
     <div className="interior-bio-image"><MediaFrame media={site.aboutPhoto ? { src: site.aboutPhoto, type: "image", alt: "Fotografia oficial de Dinaide Rocha" } : undefined} label="Fotografia autorizada em preparação"/></div>
-    <div className="interior-bio-copy"><span className="eyebrow"><span className="eyebrow-line"/>APRESENTAÇÃO</span><h2>Uma trajetória<br/><em>para conhecer.</em></h2><p className="article-lead">Dinaide Rocha é vereadora de Riacho de Santana, Bahia.</p>
+    <div className="interior-bio-copy"><span className="eyebrow"><span className="eyebrow-line"/>APRESENTAÇÃO</span><h2>Uma trajetória<br/><em>para conhecer.</em></h2><p className="article-lead">Denaide Silva Rocha Penalva, conhecida como Dinaide Rocha, nasceu em Canatiba (Betânia) e vive há mais de três décadas em Riacho de Santana, Bahia.</p>
       {site.biography.length ? site.biography.map((p, i) => <p key={i}>{p}</p>) : <EmptyState compact title="Biografia em elaboração." description="O texto completo será publicado após revisão e autorização da equipe, sem informações presumidas."/>}
       <Link to="/historia" className="button button-primary">Conheça a trajetória <ArrowUpRight size={17}/></Link>
     </div>
@@ -36,7 +36,7 @@ function Biography() {
 
 function History() {
   return <div className="shell interior-history">
-    <div className="history-intro"><span className="eyebrow"><span className="eyebrow-line"/>MOMENTOS DA TRAJETÓRIA</span><h2>Há histórias que precisam ser contadas com cuidado.</h2><p>Os registros abaixo serão organizados cronologicamente, conforme as informações biográficas oficiais forem disponibilizadas.</p></div>
+    <div className="history-intro"><span className="eyebrow"><span className="eyebrow-line"/>MOMENTOS DA TRAJETÓRIA</span><h2>Do comércio à vida pública em Riacho de Santana.</h2><p>Conheça momentos da trajetória pessoal, empreendedora e política de Dinaide Rocha. Os acontecimentos sem data confirmada são apresentados em ordem narrativa.</p></div>
     {site.history.length ? <ol className="timeline">{site.history.map((item, i) => <li key={i}><span>{item.year || String(i + 1).padStart(2, "0")}</span><div><h3>{item.title}</h3><p>{item.description}</p></div></li>)}</ol> : <EmptyState title="A linha do tempo será publicada aqui." description="Datas, acontecimentos e fotografias serão incluídos somente após confirmação pela equipe."/>}
     <div className="history-footer-cta"><Link to="/biografia" className="text-link">Voltar à biografia <ArrowRight size={18}/></Link></div>
   </div>;
