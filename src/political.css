@@ -27,9 +27,9 @@ body { color: var(--dr-ink); background: #fff; }
 .site-header--v2 .nav-link { padding: 31px 0; font-size: 11px; font-weight: 800; white-space: nowrap; }
 .site-header--v2 .header-contact { background: #ed006e; font-size: 11px; min-height: 42px; padding: 11px 16px; }
 /* FULL-BLEED HERO: pessoa recortada sem fundo de foto quadrada. */
-.political-hero { min-height: 660px; position: relative; isolation: isolate; color: white; background: #dc0067; }
-.political-hero__background { pointer-events: none; position: absolute; inset: 0; background: radial-gradient(ellipse at 63% 65%, #f20a7b 0%, #e0006c 55%, #c50059 100%); z-index: -2; }
-.political-hero__background:after { content: ""; position: absolute; right: -5%; top: -30%; width: 72vw; height: 90vw; max-height: 1200px; max-width: 1200px; border: 1px solid #ffffff26; border-radius: 100%; pointer-events: none; }
+.political-hero { min-height: 660px; position: relative; isolation: isolate; color: white; background: #38363a; }
+.political-hero__background { pointer-events: none; position: absolute; inset: 0; background: radial-gradient(ellipse 52% 88% at 78% 42%, rgba(190,188,190,.44) 0%, rgba(153,150,154,.14) 55%, transparent 92%), linear-gradient(108deg,#222126 0%,#37353a 43%,#626065 77%,#7b797c 100%); z-index: -2; }
+.political-hero__background:after { content: none; }
 .political-hero__portrait { position: absolute; bottom: 0; right: max(0px,calc((100vw - 1270px)/2 - 80px)); height: min(100%, 725px); width: clamp(480px, 53.5vw, 770px); z-index: -1; overflow: hidden; display: flex; justify-content: flex-end; align-items: flex-end; }
 .political-hero__portrait img { display: block; height: 100%; width: 100%; object-fit: contain; object-position: center bottom; }
 .political-hero__container { height: 660px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; position: relative; }
@@ -38,7 +38,7 @@ body { color: var(--dr-ink); background: #fff; }
 .political-hero__eyebrow span { font-weight: 600; border-left: 1px solid #ffffff88; padding-left: 12px; margin-left: 9px; }
 .political-hero h1 { margin: 0; font-size: clamp(94px, 9.5vw, 151px); line-height: .87; letter-spacing: -.09em; font-weight: 900; color: white; text-transform: uppercase; }
 .political-hero h1 > span { display: inline-block; }
-.political-hero__dot { color: #55102b; }
+.political-hero__dot { color: #f50076; }
 .political-hero__subtitle { font: 500 clamp(18px, 1.75vw, 23px)/1.5 var(--dr-body); color: #fff; max-width: 480px; margin: 33px 0 0; letter-spacing: -.02em; }
 .political-hero__buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 25px; margin-top: 32px; }
 .political-button--hero-link { color: white; border-radius: 0; border-bottom: 1px solid #ffffffaa; padding-inline: 1px; }
@@ -126,15 +126,15 @@ body { color: var(--dr-ink); background: #fff; }
  .political-hero { min-height: 890px; }
  .political-hero__container { height: 890px; }
  .political-hero__content { padding-top: 73px; width: 100%; }
- .political-hero__portrait { width: min(100%, 600px); height: 420px; right: 0; bottom: 0; z-index: -1; opacity: 1; }
- .political-hero__background { background: linear-gradient(180deg, #c60058 0%, #e6006e 50%, #f20a7b 100%); }
+ .political-hero__portrait { width: min(100%, 600px); height: 465px; right: 0; bottom: 0; z-index: -1; opacity: 1; }
+ .political-hero__background { background: radial-gradient(ellipse 85% 45% at 60% 78%, rgba(193,190,192,.32), transparent 90%), linear-gradient(180deg,#222126 0%,#343238 39%,#69666b 76%,#7d7a7c 100%); }
  .political-hero__background:after { display: none; }
  .political-hero__eyebrow { font-size: 9px; letter-spacing: .10em; margin-bottom: 24px; }
  .political-hero h1 { font-size: clamp(67px, 14.8vw, 105px); line-height: .87; }
  .political-hero__subtitle { font-size: 17px; margin-top: 23px; max-width: 310px; }
  .political-hero__buttons { gap: 11px; margin-top: 25px; }
  .political-button { font-size: 12px; min-height: 50px; padding: 11px 16px; gap: 12px; }
- .political-hero__scroll { align-self: flex-start; background: #c60058b0; padding: 10px 12px; font-size: 9px; margin-bottom: 15px; }
+ .political-hero__scroll { align-self: flex-start; background: #252429a6; padding: 10px 12px; font-size: 9px; margin-bottom: 15px; }
  .political-intro { padding: 72px 0 82px; }
  .political-intro__container { grid-template-columns: 1fr; gap: 39px; }
  .political-intro__photo { height: auto; aspect-ratio: 6/5; max-height: 480px; }
@@ -171,7 +171,7 @@ body { color: var(--dr-ink); background: #fff; }
  .political-hero { min-height: 870px; }
  .political-hero__container { height: 870px; }
  .political-hero h1 { font-size: clamp(60px,14vw,73px); }
- .political-hero__portrait { height: 420px; }
+ .political-hero__portrait { height: 440px; }
  .political-hero__buttons { flex-direction: column; align-items: flex-start; gap: 0; }
  .political-hero__eyebrow span { padding-left: 8px; margin-left: 7px; }
 }
