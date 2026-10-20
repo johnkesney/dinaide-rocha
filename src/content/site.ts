@@ -31,6 +31,7 @@ export type Entry = {
 
 export const site = {
   name: "Dinaide Rocha",
+  logo: "/images/dinaide-logo-oficial.png",
   role: "Vereadora de Riacho de Santana — Bahia",
   location: "Riacho de Santana, Bahia",
   description:

@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { site } from "@/content/site";
 
 const navigation = [
   { label: "Início", href: "/" },
@@ -27,7 +28,7 @@ export function SiteHeader() {
   return <header className="site-header site-header--v2">
     <div className="institutional-topbar"><div className="shell"><span>PORTAL INSTITUCIONAL</span><span>RIACHO DE SANTANA <b>·</b> BAHIA</span></div></div>
     <div className="shell header-inner">
-      <Link to="/" className="institutional-brand" aria-label="Dinaide Rocha — página inicial"><span>DINAIDE<strong>ROCHA<span>.</span></strong></span><small>VEREADORA DE RIACHO DE SANTANA</small></Link>
+      <Link to="/" className="institutional-brand institutional-brand--official" aria-label="Dinaide Rocha — página inicial"><img src={site.logo} alt="" width={575} height={216} fetchPriority="high" decoding="async" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">{navigation.map(({label,href})=><Link key={href} to={href as never} className="nav-link" activeProps={{className:"nav-link--active"}} activeOptions={{exact:href==="/"}}>{label}</Link>)}</nav>
       <Link to="/contato" className="header-contact">Contato <ArrowUpRight size={17} aria-hidden="true"/></Link>
       <button type="button" className="menu-toggle" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open?"Fechar menu":"Abrir menu"}>{open?<X size={26}/>:<Menu size={26}/>}</button>
