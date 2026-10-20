@@ -222,8 +222,8 @@ body { color: var(--dr-ink); background: #fff; }
   gap: clamp(16px, 1.8vw, 30px);
 }
 .site-header--v2 .institutional-brand--official {
-  flex: 0 0 clamp(170px, 14vw, 204px);
-  width: clamp(170px, 14vw, 204px);
+  flex: 0 0 clamp(132px, 11vw, 158px);
+  width: clamp(132px, 11vw, 158px);
 }
 .site-header--v2 .institutional-brand--official img {
   width: 100%;
@@ -279,7 +279,7 @@ body { color: var(--dr-ink); background: #fff; }
     left: 50%;
     transform: translateX(-50%);
     flex: 0 0 auto;
-    width: 190px;
+    width: 148px;
     max-width: calc(100% - 110px);
   }
   .site-header--v2 .menu-toggle {
@@ -319,8 +319,8 @@ body { color: var(--dr-ink); background: #fff; }
 }
 @media (max-width: 740px) {
   .site-header--v2 .header-inner { height: 74px; }
-  .site-header--v2 .institutional-brand--official { width: 177px; }
+  .site-header--v2 .institutional-brand--official { width: 136px; }
 }
 @media (max-width: 390px) {
-  .site-header--v2 .institutional-brand--official { width: 159px; }
+  .site-header--v2 .institutional-brand--official { width: 123px; }
 }
