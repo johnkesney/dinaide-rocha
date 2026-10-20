@@ -26,7 +26,6 @@ export function SiteHeader() {
   }, [open]);
 
   return <header className="site-header site-header--v2">
-    <div className="institutional-topbar"><div className="shell"><span>PORTAL INSTITUCIONAL</span><span>RIACHO DE SANTANA <b>·</b> BAHIA</span></div></div>
     <div className="shell header-inner">
       <Link to="/" className="institutional-brand institutional-brand--official" aria-label="Dinaide Rocha — página inicial"><img src={site.logo} alt="" width={575} height={216} fetchPriority="high" decoding="async" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">{navigation.map(({label,href})=><Link key={href} to={href as never} className="nav-link" activeProps={{className:"nav-link--active"}} activeOptions={{exact:href==="/"}}>{label}</Link>)}</nav>
