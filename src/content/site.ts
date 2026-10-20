@@ -38,7 +38,7 @@ export const site = {
   heroTitle: "Dinaide Rocha",
   heroIntro:
     "Conheça a trajetória de Dinaide Rocha e acompanhe, neste espaço, informações e registros públicos de seu mandato.",
-  heroPhoto: "/images/dinaide-rosa.webp" /* Fotografia enviada pela equipe em 19/10/2026. */,
+  heroPhoto: "/images/dinaide-rosa-recorte.webp" /* Fotografia enviada pela equipe em 19/10/2026. */,
   aboutPhoto: "/images/dinaide-branco.webp",
   biography: [] as string[] /* Preencher apenas com biografia revisada pela equipe. */,
   history: [] as { year?: string; title: string; description: string; photo?: string }[],
