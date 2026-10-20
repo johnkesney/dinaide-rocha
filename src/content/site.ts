@@ -38,8 +38,8 @@ export const site = {
   heroTitle: "Dinaide Rocha",
   heroIntro:
     "Conheça a trajetória de Dinaide Rocha e acompanhe, neste espaço, informações e registros públicos de seu mandato.",
-  heroPhoto: "" /* Adicionar somente fotografia autorizada da vereadora. */,
-  aboutPhoto: "",
+  heroPhoto: "/images/dinaide-rosa.webp" /* Fotografia enviada pela equipe em 19/10/2026. */,
+  aboutPhoto: "/images/dinaide-branco.webp",
   biography: [] as string[] /* Preencher apenas com biografia revisada pela equipe. */,
   history: [] as { year?: string; title: string; description: string; photo?: string }[],
   curiosities: [] as { title: string; description: string; image?: string }[],
@@ -63,7 +63,22 @@ export const projects: Entry[] = [];
 export const news: Entry[] = [];
 export const achievements: Entry[] = [];
 export const community: Entry[] = [];
-export const gallery: SiteMedia[] = [];
+export const gallery: SiteMedia[] = [
+  {
+    src: "/images/dinaide-rosa.webp",
+    alt: "Dinaide Rocha em retrato de estúdio, com blusa rosa e mãos unidas",
+    caption: "Retrato institucional de Dinaide Rocha",
+    album: "Retratos institucionais",
+    type: "image",
+  },
+  {
+    src: "/images/dinaide-branco.webp",
+    alt: "Dinaide Rocha em retrato de estúdio, vestindo blazer branco",
+    caption: "Retrato institucional de Dinaide Rocha",
+    album: "Retratos institucionais",
+    type: "image",
+  },
+];
 
 export function published<T extends { status: PublicationStatus; publishedAt?: string }>(entries: T[]): T[] {
   return entries

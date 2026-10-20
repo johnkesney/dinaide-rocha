@@ -1,116 +1,134 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, ArrowUpRight, HeartHandshake, MapPin, MoveUpRight, Newspaper, Sparkles } from "lucide-react";
-import { actions, achievements, community, configuredSocials, gallery, news, projects, published, site } from "@/content/site";
-import { EmptyState, EntryCard, SectionHeading } from "@/components/site/Editorial";
-import { MediaFrame } from "@/components/site/MediaFrame";
+import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays, Camera, FileText, MapPin, Newspaper } from "lucide-react";
+import { actions, achievements, community, gallery, news, projects, published, site } from "@/content/site";
+import { EntryCard } from "@/components/site/Editorial";
 
+/** Página inicial do mandato: só publica informações oficiais verificadas. */
 export function HomePage() {
-  const recentActions = published(actions).slice(0, 3);
-  const recentProjects = published(projects).slice(0, 3);
-  const recentNews = published(news).slice(0, 3);
-  const confirmedResults = published(achievements);
-  const socialLinks = configuredSocials();
+  const latestNews = published(news).slice(0, 3);
+  const latestActions = published(actions).slice(0, 3);
+  const latestProjects = published(projects).slice(0, 3);
+  const verifiedAchievements = published(achievements).slice(0, 3);
+  const latestCommunity = published(community).slice(0, 4);
+  const photoGallery = gallery.filter((item) => item.type === "image").slice(0, 4);
 
-  return <main id="conteudo">
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="shell hero-grid">
-        <div className="hero-copy">
-          <span className="hero-kicker"><span className="pink-dot" /> UM ESPAÇO DE DIÁLOGO E INFORMAÇÃO</span>
-          <div className="hero-title-wrap">
-            <span className="hero-pretitle">Vereadora de Riacho de Santana</span>
-            <h1 id="hero-title">Dinaide<br/><em>Rocha<span className="hero-period">.</span></em></h1>
+  return (
+    <main id="conteudo" className="institutional-home">
+      <section className="institutional-hero" aria-labelledby="home-title">
+        <div className="institutional-hero__image" aria-hidden="true">
+          <img src={site.heroPhoto} alt="" fetchPriority="high" width="840" height="1262" decoding="async" />
+        </div>
+        <div className="shell institutional-hero__inner">
+          <div className="institutional-hero__copy">
+            <p className="institutional-label institutional-label--light"><span className="institutional-label__bar" /> Vereadora de Riacho de Santana · BA</p>
+            <h1 id="home-title"><span>Dinaide</span><strong>Rocha<span className="institutional-hero__period">.</span></strong></h1>
+            <div className="institutional-hero__rule" />
+            <p className="institutional-hero__intro">Um espaço para conhecer sua trajetória e acompanhar de perto o trabalho parlamentar.</p>
+            <div className="institutional-hero__actions">
+              <Link className="institutional-btn institutional-btn--pink" to="/biografia">Conheça Dinaide <ArrowUpRight aria-hidden="true" size={18}/></Link>
+              <Link className="institutional-btn institutional-btn--text-light" to="/acoes">Acompanhe o mandato <ArrowRight aria-hidden="true" size={18}/></Link>
+            </div>
           </div>
-          <p className="hero-description">{site.heroIntro}</p>
-          <div className="hero-actions">
-            <Link className="button button-primary" to="/historia">Conheça minha história <ArrowUpRight size={18} /></Link>
-            <Link className="button button-outline" to="/acoes">Acompanhe meu trabalho <ArrowRight size={18} /></Link>
-          </div>
-          <a className="hero-scroll" href="#conheca"><ArrowDown size={17}/> DESCUBRA MAIS</a>
-        </div>
-        <div className="hero-art">
-          <div className="hero-photo-border" aria-hidden="true" />
-          <div className="hero-image">
-            <MediaFrame media={site.heroPhoto ? { src: site.heroPhoto, alt: "Retrato oficial de Dinaide Rocha", type: "image" } : undefined} label="Espaço reservado à fotografia oficial" />
-          </div>
-          <span className="hero-art-corner" aria-hidden="true">DR</span>
-          <div className="hero-vertical" aria-hidden="true">RIACHO DE SANTANA · BAHIA · BRASIL</div>
-          <div className="hero-art-card"><span>INSTITUCIONAL</span><strong>Um mandato<br/>para acompanhar.</strong><ArrowUpRight size={20}/></div>
-        </div>
-      </div>
-      <div className="shell hero-index"><span>01 — APRESENTAÇÃO</span><span>BAHIA · BRASIL</span></div>
-    </section>
-
-    <div className="statement-strip"><div className="shell statement-inner"><span>DIÁLOGO</span><i>✳</i><span>INFORMAÇÃO</span><i>✳</i><span>COMUNIDADE</span><i>✳</i><span>TRANSPARÊNCIA</span></div></div>
-
-    <section className="section about-section" id="conheca">
-      <div className="shell about-layout">
-        <div className="about-visual">
-          <MediaFrame media={site.aboutPhoto ? { src: site.aboutPhoto, alt: "Fotografia de Dinaide Rocha", type: "image" } : undefined} label="Fotografia da trajetória em preparação" />
-          <div className="about-visual-label"><span>CONHEÇA</span><strong>A pessoa por trás<br/>do mandato.</strong></div>
-        </div>
-        <div className="about-content">
-          <div className="eyebrow"><span className="eyebrow-line" /> CONHEÇA DINAIDE</div>
-          <h2 className="display-title">Toda história<br/>começa com <em>gente.</em></h2>
-          <div className="small-rule" />
-          <p className="large-copy">Antes do cargo público, existe uma história para conhecer.</p>
-          <p>Este espaço reúne a apresentação de Dinaide Rocha, vereadora de Riacho de Santana, e será atualizado com informações biográficas revisadas e autorizadas pela equipe.</p>
-          <Link className="text-link text-link--pink" to="/biografia">Conheça Dinaide <ArrowUpRight size={19}/></Link>
-        </div>
-      </div>
-    </section>
-
-    <section className="section history-section" id="historia">
-      <div className="shell">
-        <SectionHeading eyebrow="MINHA HISTÓRIA" title="Uma trajetória. Muitas páginas para contar." description="Um lugar dedicado a registrar, com cuidado e fidelidade, os momentos que fazem parte dessa caminhada." action="Ver a história completa" actionHref="/historia" />
-        <div className="history-panel">
-          <div className="history-number">02<span> / HISTÓRIA</span></div>
-          <div className="history-chapters">
-            {site.history.length ? site.history.slice(0, 3).map((moment, index) => <div className="history-chapter" key={index}><span>{moment.year || String(index + 1).padStart(2, "0")}</span><h3>{moment.title}</h3><p>{moment.description}</p></div>) : <div className="history-waiting"><span className="history-waiting__icon">✳</span><h3>Histórias que merecem ser registradas.</h3><p>A linha do tempo será construída a partir de informações e registros oficiais enviados pela equipe.</p><Link to="/historia" className="text-link">Acessar página da história <ArrowUpRight size={18}/></Link></div>}
+          <div className="institutional-hero__bottom">
+            <a href="#conheca-dinaide">Explore o site <ArrowDown aria-hidden="true" size={15}/></a>
+            <span>PORTAL INSTITUCIONAL <span aria-hidden="true">/</span> RIACHO DE SANTANA, BAHIA</span>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="section work-section" id="trabalho">
-      <div className="shell">
-        <SectionHeading eyebrow="NOSSO TRABALHO" title="O trabalho público precisa ser visto." description="Registros das atividades parlamentares, iniciativas e encontros com a população, sempre com informações verificáveis." action="Todas as ações" actionHref="/acoes" />
-        {recentActions.length ? <div className="entry-grid">{recentActions.map((item) => <EntryCard key={item.slug} item={item} collection="acoes"/>)}</div> :
-          <div className="work-empty-grid"><div className="work-empty-primary"><span className="work-big-mark" aria-hidden="true">✳</span><h3>Presença e trabalho,<br/><em>com transparência.</em></h3><p>As atividades do mandato aparecerão aqui assim que os registros forem revisados e publicados.</p><Link to="/acoes" className="button button-white">Conhecer as ações <ArrowUpRight size={17}/></Link></div><div className="work-empty-secondary"><span>ACERVO INSTITUCIONAL</span><strong>Para cada registro,<br/>contexto, data<br/>e informação.</strong><div className="work-secondary-ornament">01 / 03</div></div></div>}
-      </div>
-    </section>
+      <section className="institutional-about" id="conheca-dinaide" aria-labelledby="about-heading">
+        <div className="shell institutional-about__layout">
+          <div className="institutional-about__image">
+            <img loading="lazy" decoding="async" src={site.aboutPhoto} width="840" height="1260" alt="Dinaide Rocha em retrato institucional com roupa branca"/>
+            <div className="institutional-about__caption">DINAIDE ROCHA <span>·</span> RIACHO DE SANTANA</div>
+          </div>
+          <div className="institutional-about__body">
+            <p className="institutional-label"><span className="institutional-label__bar" /> QUEM É DINAIDE</p>
+            <h2 id="about-heading">Uma história para conhecer<span className="institutional-pink-dot">.</span></h2>
+            <p className="institutional-about__lead">A pessoa por trás do mandato.</p>
+            <p>Conheça Dinaide Rocha, vereadora de Riacho de Santana, e saiba mais sobre sua trajetória pessoal e pública.</p>
+            <p>Neste espaço, a história será apresentada a partir de informações e registros confirmados pela equipe.</p>
+            <Link className="institutional-inline-link" to="/historia">Conheça sua história <ArrowUpRight aria-hidden="true" size={19}/></Link>
+          </div>
+        </div>
+      </section>
 
-    {confirmedResults.length > 0 && <section className="section achievements-section"><div className="shell"><SectionHeading eyebrow="CONQUISTAS E ENTREGAS" title="Resultados com documentação." description="Etapas e resultados publicados com indicação clara de sua situação." /> <div className="entry-grid">{confirmedResults.slice(0,3).map((item) => <div key={item.slug} className="achievement-card"><strong>{item.title}</strong><span>{item.location || "Riacho de Santana"}</span><p>{item.summary}</p><small>{item.outcome === "concluida" ? "Concluída" : item.outcome === "encaminhada" ? "Encaminhada" : item.outcome === "em-andamento" ? "Em andamento" : "Proposta"}</small></div>)}</div></div></section>}
+      <section className="institutional-work" id="mandato" aria-labelledby="mandato-heading">
+        <div className="shell">
+          <div className="institutional-section-header">
+            <div>
+              <p className="institutional-label"><span className="institutional-label__bar" /> ACOMPANHE O MANDATO</p>
+              <h2 id="mandato-heading">O que acontece<br/>no mandato<span className="institutional-pink-dot">.</span></h2>
+            </div>
+            <p>Informação pública de forma simples e organizada. Acompanhe atividades, propostas e atualizações.</p>
+          </div>
+          <div className="institutional-work__rows">
+            <Link to="/acoes" className="institutional-work__row">
+              <span className="institutional-work__number">01</span><span className="institutional-work__icon"><MapPin aria-hidden="true" size={23}/></span>
+              <span className="institutional-work__name">Ações e atividades<small>Visitas, agendas e registros de trabalho</small></span>
+              <ArrowUpRight className="institutional-work__arrow" aria-hidden="true" size={25}/>
+            </Link>
+            <Link to="/projetos" className="institutional-work__row">
+              <span className="institutional-work__number">02</span><span className="institutional-work__icon"><FileText aria-hidden="true" size={23}/></span>
+              <span className="institutional-work__name">Projetos e iniciativas<small>Proposições e documentos legislativos</small></span>
+              <ArrowUpRight className="institutional-work__arrow" aria-hidden="true" size={25}/>
+            </Link>
+            <Link to="/noticias" className="institutional-work__row">
+              <span className="institutional-work__number">03</span><span className="institutional-work__icon"><Newspaper aria-hidden="true" size={23}/></span>
+              <span className="institutional-work__name">Notícias e atualizações<small>Comunicados e informações do mandato</small></span>
+              <ArrowUpRight className="institutional-work__arrow" aria-hidden="true" size={25}/>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-    <section className="section projects-section" id="projetos">
-      <div className="shell">
-        <SectionHeading eyebrow="PROJETOS E INICIATIVAS" title="Ideias, propostas e caminhos." description="Acompanhe as iniciativas e entenda em que etapa cada uma se encontra." action="Ver todos os projetos" actionHref="/projetos" light/>
-        {recentProjects.length ? <div className="entry-grid entry-grid--dark">{recentProjects.map((item) => <EntryCard key={item.slug} item={item} collection="projetos"/>)}</div> :
-          <div className="projects-feature"><div className="projects-feature-index">PROJETOS<br/>E INICIATIVAS <span>↗</span></div><div className="projects-feature-copy"><strong>Informação clara.<br/><em>Do início ao resultado.</em></strong><p>Propostas e documentos serão disponibilizados após conferência dos dados oficiais.</p><Link to="/projetos" className="button button-light-outline">Explorar iniciativas <ArrowUpRight size={17}/></Link></div></div>}
-      </div>
-    </section>
+      {(latestActions.length > 0 || latestProjects.length > 0) && (
+        <section className="institutional-feed" aria-labelledby="atividades-heading"><div className="shell">
+          <div className="institutional-section-header institutional-section-header--compact"><div><p className="institutional-label"><span className="institutional-label__bar" /> ATUAÇÃO PARLAMENTAR</p><h2 id="atividades-heading">Atividades recentes<span className="institutional-pink-dot">.</span></h2></div><Link to="/acoes" className="institutional-inline-link">Todas as ações <ArrowUpRight size={18}/></Link></div>
+          <div className="entry-grid">{latestActions.map((item) => <EntryCard key={item.slug} item={item} collection="acoes"/>)}{latestProjects.map((item) => <EntryCard key={item.slug} item={item} collection="projetos"/>)}</div>
+        </div></section>
+      )}
 
-    <section className="section news-section" id="noticias">
-      <div className="shell">
-        <SectionHeading eyebrow="ÚLTIMAS ATUALIZAÇÕES" title="Informação que aproxima." description="Notícias, comunicados e registros relevantes da atuação institucional." action="Ver todas as notícias" actionHref="/noticias"/>
-        {recentNews.length ? <div className="entry-grid">{recentNews.map((item) => <EntryCard key={item.slug} item={item} collection="noticias"/>)}</div> : <div className="news-empty"><div className="news-empty-icon"><Newspaper size={44} strokeWidth={1.2}/></div><div><span className="eyebrow muted-eyebrow">EDITORIAL / EM ATUALIZAÇÃO</span><h3>Novidades em breve.</h3><p>Esta área receberá notícias e atualizações revisadas pela equipe.</p></div><Link to="/noticias" className="round-arrow" aria-label="Ir para notícias"><ArrowUpRight size={25}/></Link></div>}
-      </div>
-    </section>
+      {verifiedAchievements.length > 0 && (
+        <section className="institutional-feed institutional-feed--soft" aria-labelledby="resultados-heading"><div className="shell">
+          <div className="institutional-section-header institutional-section-header--compact"><div><p className="institutional-label"><span className="institutional-label__bar" /> REGISTROS DOCUMENTADOS</p><h2 id="resultados-heading">Conquistas e entregas<span className="institutional-pink-dot">.</span></h2></div></div>
+          <div className="institutional-results-grid">{verifiedAchievements.map((item) => <article className="institutional-result" key={item.slug}><span>{item.location || site.location}</span><h3>{item.title}</h3><p>{item.summary}</p><small>{item.outcome === "concluida" ? "Concluída" : item.outcome === "em-andamento" ? "Em andamento" : item.outcome === "encaminhada" ? "Encaminhada" : "Proposta"}</small></article>)}</div>
+        </div></section>
+      )}
 
-    {site.curiosities.length > 0 && <section className="section curiosities-section"><div className="shell"><SectionHeading eyebrow="VOCÊ SABIA?" title="Mais do que um cargo. Uma história." description="Curiosidades e informações autorizadas pela equipe."/><div className="curiosity-grid">{site.curiosities.map((item) => <div className="curiosity-card" key={item.title}><Sparkles size={26}/><h3>{item.title}</h3><p>{item.description}</p></div>)}</div></div></section>}
+      <section className="institutional-news" aria-labelledby="news-heading">
+        <div className="shell">
+          <div className="institutional-section-header institutional-section-header--compact">
+            <div><p className="institutional-label"><span className="institutional-label__bar" /> INFORMAÇÕES DO MANDATO</p><h2 id="news-heading">Notícias e atualizações<span className="institutional-pink-dot">.</span></h2></div>
+            <Link to="/noticias" className="institutional-inline-link">Todas as notícias <ArrowUpRight aria-hidden="true" size={19}/></Link>
+          </div>
+          {latestNews.length ? <div className="entry-grid">{latestNews.map((item) => <EntryCard key={item.slug} item={item} collection="noticias"/>)}</div> : (
+            <div className="institutional-empty-news"><div className="institutional-empty-news__icon"><CalendarDays size={25} strokeWidth={1.7} aria-hidden="true" /></div><div><strong>Publicações em preparação</strong><p>Notícias e comunicados oficiais serão disponibilizados aqui após a conferência das informações.</p></div><Link to="/noticias" aria-label="Acessar página de notícias"><ArrowUpRight aria-hidden="true" size={23}/></Link></div>
+          )}
+        </div>
+      </section>
 
-    <section className="section community-section" id="comunidade">
-      <div className="shell community-layout"><div className="community-intro"><div className="eyebrow"><span className="eyebrow-line" /> NA COMUNIDADE</div><h2 className="display-title">Perto de quem<br/><em>faz a cidade.</em></h2><p>Encontros e atividades em Riacho de Santana, registrados com data, local e informações de contexto.</p><Link to="/galeria" className="button button-primary">Explorar a galeria <ArrowUpRight size={17}/></Link></div>
-        <div className="community-collage">
-          {community.length ? published(community).slice(0, 2).map((item) => <MediaFrame key={item.slug} media={item.cover} variant="portrait" label="Registro da comunidade"/>) : <><MediaFrame label="Registros da comunidade em preparação"/><div className="community-sticker"><MapPin size={21}/><strong>Riacho de<br/>Santana</strong><span>BAHIA</span></div></>}
-        </div></div>
-    </section>
+      <section className="institutional-gallery" aria-labelledby="gallery-heading">
+        <div className="shell institutional-gallery__layout">
+          <div className="institutional-gallery__text">
+            <p className="institutional-label"><span className="institutional-label__bar" /> FOTOS E REGISTROS</p>
+            <h2 id="gallery-heading">Nossa cidade.<br/>Nossa história<span className="institutional-pink-dot">.</span></h2>
+            <p>Um espaço para reunir imagens e vídeos de atividades, encontros e momentos públicos em Riacho de Santana.</p>
+            <p className="institutional-gallery__note">Os registros de eventos serão publicados conforme disponibilizados e autorizados.</p>
+            <Link className="institutional-btn institutional-btn--outline" to="/galeria">Acessar galeria <ArrowUpRight size={18} aria-hidden="true"/></Link>
+          </div>
+          <div className="institutional-gallery__images">
+            {photoGallery.length || latestCommunity.some((item) => item.cover) ? <div className="institutional-gallery__collection">{photoGallery.map((item, index) => <img key={item.src+index} src={item.src} alt={item.alt} loading="lazy" decoding="async" />)}{latestCommunity.filter((item) => item.cover).map((item) => <img key={item.slug} src={item.cover!.src} alt={item.cover!.alt} loading="lazy" decoding="async"/>)}</div> : (
+              <img src={site.heroPhoto} loading="lazy" decoding="async" width="840" height="1262" alt="Retrato institucional de Dinaide Rocha, com camisa rosa" />
+            )}
+            <div className="institutional-gallery__badge"><Camera size={20} aria-hidden="true"/><span>GALERIA INSTITUCIONAL</span></div>
+          </div>
+        </div>
+      </section>
 
-    <section className="section gallery-section" id="galeria">
-      <div className="shell gallery-promo"><div className="gallery-promo-heading"><div className="eyebrow"><span className="eyebrow-line" /> GALERIA DE REGISTROS</div><h2 className="display-title">Momentos que<br/><em>ficam.</em></h2><p>Imagens e vídeos autorizados, organizados para preservar e compartilhar registros da trajetória e das atividades públicas.</p><Link to="/galeria" className="text-link text-link--pink">Ver galeria completa <ArrowUpRight size={19}/></Link></div><div className="gallery-promo-media"><MediaFrame media={gallery.find((m) => m.type === "image")} variant="landscape" label="Álbum de fotografias em preparação"/><span className="gallery-promo-tag">ÁLBUNS · FOTOS · VÍDEOS</span></div></div>
-    </section>
-
-    <section className="connect-section" id="redes"><div className="shell connect-layout"><div><span className="eyebrow"><span className="eyebrow-line" /> CONEXÃO</span><h2>Informação também<br/><em>é proximidade.</em></h2></div><div>{socialLinks.length ? <div className="social-buttons">{socialLinks.map(([name, url]) => <a href={url} key={name} rel="noopener noreferrer" target="_blank">{name}<MoveUpRight size={17}/></a>)}</div> : <p>Os perfis oficiais serão disponibilizados aqui após confirmação dos endereços pela equipe.</p>}<Link to="/contato" className="connect-contact">Canais de contato <ArrowUpRight size={18}/></Link></div></div></section>
-
-    <section className="closing-section"><div className="shell closing-layout"><div className="closing-stamp"><HeartHandshake size={33} strokeWidth={1.1}/><span>TRANSPARÊNCIA E DIÁLOGO</span></div><div><h2>Vamos manter<br/>essa <em>conversa.</em></h2><p>Conheça os canais institucionais e acompanhe as informações oficiais do mandato.</p><Link to="/contato" className="button button-dark">Entre em contato <ArrowUpRight size={19}/></Link></div></div></section>
-  </main>;
+      <section className="institutional-contact" aria-labelledby="contact-heading"><div className="shell institutional-contact__inner"><div>
+        <p className="institutional-label institutional-label--light"><span className="institutional-label__bar"/> FALE COM A EQUIPE</p><h2 id="contact-heading">Um canal aberto<br/>com você<span className="institutional-pink-dot">.</span></h2><p>Encontre os canais institucionais disponíveis e saiba como entrar em contato.</p>
+      </div><Link to="/contato" className="institutional-btn institutional-btn--pink">Entre em contato <ArrowUpRight aria-hidden="true" size={19}/></Link></div></section>
+    </main>
+  );
 }
