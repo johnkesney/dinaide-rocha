@@ -1,7 +1,7 @@
 import type { SiteMedia } from "@/content/site";
 
 export function MediaFrame({ media, variant = "portrait", label = "Fotografia oficial em preparação" }: {
-  media?: SiteMedia | null;
+  media?: SiteMedia | null | undefined;
   variant?: "portrait" | "landscape" | "square";
   label?: string;
 }) {

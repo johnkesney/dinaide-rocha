@@ -56,7 +56,7 @@ export const site = {
     address: "",
     hours: "",
   },
-} as const;
+};
 
 export const actions: Entry[] = [];
 export const projects: Entry[] = [];
