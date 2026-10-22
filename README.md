@@ -24,7 +24,7 @@ Confirmar fotografias e licenças, logotipo, biografia, canais de contato, regis
 ## Matéria da entrega de trator — Sambaíba
 O registro editorial está salvo em `src/content/sambaiba.ts` com `status: "draft"`, **não aparece no site** até aprovação expressa. Está referenciado nas coleções de ações, conquistas e comunidade.
 
-Pendências: data, revisão de falas atribuídas, documentos da aquisição e autorização da equipe. As três fotografias recebidas foram otimizadas em WebP e adicionadas ao repositório (a matéria permanece em rascunho); caminhos:
+A entrega ocorreu em **02/10/2026**, conforme data informada pela equipe. Não é necessário anexar documentos de aquisição à matéria. O registro permanece em rascunho até orientação expressa para publicá-lo. As três fotografias recebidas foram otimizadas em WebP e adicionadas ao repositório (a matéria permanece em rascunho); caminhos:
 - `public/images/sambaiba-entrega-trator-01.webp`
 - `public/images/sambaiba-entrega-trator-02.webp`
 - `public/images/sambaiba-entrega-trator-03.webp`

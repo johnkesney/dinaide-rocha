@@ -5,11 +5,8 @@ import type { Entry } from "./site";
  *
  * Base: informações e 3 fotografias enviadas pela equipe em conversa.
  * Confirmações ainda necessárias:
- * - data exata da entrega (não informada);
  * - identificação oficial da associação e localidade;
- * - documentos relativos à aquisição e responsabilidades institucionais;
  * - revisão e autorização das falas atribuídas a Vanda e Joaquim;
- * - upload das 3 fotografias para os caminhos descritos abaixo;
  * - autorização final antes de alterar status para "published".
  *
  * Vídeo indicado pela equipe (link não conferido diretamente no Instagram).
@@ -21,7 +18,7 @@ export const sambaibaTractorDelivery: Entry = {
     "Moradores da Sambaíba participaram de um encontro para celebrar a chegada de um trator agrícola, uma conquista aguardada há mais de 30 anos, segundo relatos da comunidade.",
   category: "Comunidade rural",
   location: "Comunidade da Sambaíba, Riacho de Santana — BA",
-  publishedAt: "", // Data ainda não informada; não preencher com a data do envio.
+  publishedAt: "2026-10-02", // Data da entrega informada pela equipe: 02/10/2026.
   status: "draft",
   outcome: "concluida", // Refere-se apenas à entrega fotografada, não a obras ou serviços futuros.
   actionTaken:
