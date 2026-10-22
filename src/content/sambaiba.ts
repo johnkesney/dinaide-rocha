@@ -10,18 +10,18 @@ export const sambaibaTractorDelivery: Entry = {
   slug: "entrega-trator-comunidade-sambaiba",
   title: "Comunidade da Sambaíba celebra entrega de trator agrícola",
   summary:
-    "Após mais de 30 anos de espera, moradores da Sambaíba celebraram a entrega de um trator agrícola à comunidade, com a presença da vereadora Dinaide Rocha. Os deputados Manoel Rocha e Penalva contribuíram para a conquista, mas não estiveram presentes na entrega.",
+    "Após mais de 30 anos de espera, a comunidade da Sambaíba celebrou a entrega de um trator agrícola. A vereadora Dinaide Rocha acompanhou esse momento ao lado dos moradores, após atuar em parceria com os deputados Manoel Rocha e Penalva para viabilizar a conquista.",
   category: "Comunidade rural",
   location: "Comunidade da Sambaíba, Riacho de Santana — BA",
   publishedAt: "2026-10-02", // Data da entrega informada pela equipe: 02/10/2026.
   status: "published",
   outcome: "concluida", // Refere-se apenas à entrega fotografada, não a obras ou serviços futuros.
   actionTaken:
-    "A vereadora Dinaide Rocha e os deputados Manoel Rocha e Penalva atuaram para viabilizar a chegada do trator agrícola à comunidade da Sambaíba. Os deputados não estiveram presentes na entrega.",
+    "A vereadora Dinaide Rocha atuou em parceria com os deputados Manoel Rocha e Penalva para viabilizar a chegada do trator agrícola à comunidade da Sambaíba.",
   result: "Entrega de trator agrícola à comunidade da Sambaíba em 2 de outubro de 2026.",
   body: [
     "O dia 2 de outubro de 2026 ficará marcado na história da comunidade da Sambaíba, em Riacho de Santana. Depois de mais de 30 anos de espera, os moradores comemoraram a entrega de um trator agrícola, uma conquista importante para a comunidade rural.",
-    "A chegada do equipamento foi viabilizada pela atuação conjunta da vereadora Dinaide Rocha e dos deputados Manoel Rocha e Penalva, em resposta a uma demanda antiga da comunidade. Os deputados não compareceram ao momento da entrega.",
+    "Presente na comemoração com os moradores, Dinaide Rocha acompanhou de perto a entrega do equipamento. A conquista foi viabilizada por sua atuação em parceria com os deputados Manoel Rocha e Penalva, atendendo a uma demanda antiga da comunidade.",
     "A entrega reuniu moradores e representantes da associação local, entre eles Dona Vanda, atual presidente, e Joaquim, primeiro presidente da associação e um dos participantes de sua fundação, em 1995.",
     "Emocionada, Dona Vanda falou sobre a realização desse desejo: “Isso representa um orgulho que eu queria ter há muito tempo na comunidade. Graças a Deus tá realizando esse sonho hoje.”",
     "Joaquim também celebrou a conquista. Para ele, a chegada do trator representa um sonho realizado e a esperança de deixar um futuro melhor para as crianças e os netos da Sambaíba. Em uma fala marcante, afirmou: “Promessa todos fazem. Agora cumprir foi Dinaide.”",
