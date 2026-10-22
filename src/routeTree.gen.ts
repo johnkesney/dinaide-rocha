@@ -10,6 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BiografiaRouteImport } from './routes/biografia'
+import { Route as HistoriaRouteImport } from './routes/historia'
+import { Route as AcoesRouteImport } from './routes/acoes'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as AcoesSlugRouteImport } from './routes/acoes/$slug'
+import { Route as ProjetosSlugRouteImport } from './routes/projetos/$slug'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -17,26 +28,137 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
+const BiografiaRoute = BiografiaRouteImport.update({
+  id: '/biografia',
+  path: '/biografia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const HistoriaRoute = HistoriaRouteImport.update({
+  id: '/historia',
+  path: '/historia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const AcoesRoute = AcoesRouteImport.update({
+  id: '/acoes',
+  path: '/acoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const NoticiasRoute = NoticiasRouteImport.update({
+  id: '/noticias',
+  path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const AcoesSlugRoute = AcoesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AcoesRoute,
+} as any)
+
+const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProjetosRoute,
+} as any)
+
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NoticiasRoute,
+} as any)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/biografia': typeof BiografiaRoute
+  '/historia': typeof HistoriaRoute
+  '/acoes': typeof AcoesRouteWithChildren
+  '/projetos': typeof ProjetosRouteWithChildren
+  '/noticias': typeof NoticiasRouteWithChildren
+  '/galeria': typeof GaleriaRoute
+  '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/acoes/$slug': typeof AcoesSlugRoute
+  '/projetos/$slug': typeof ProjetosSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
 }
+
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/biografia': typeof BiografiaRoute
+  '/historia': typeof HistoriaRoute
+  '/acoes': typeof AcoesRouteWithChildren
+  '/projetos': typeof ProjetosRouteWithChildren
+  '/noticias': typeof NoticiasRouteWithChildren
+  '/galeria': typeof GaleriaRoute
+  '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/acoes/$slug': typeof AcoesSlugRoute
+  '/projetos/$slug': typeof ProjetosSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
 }
+
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/biografia': typeof BiografiaRoute
+  '/historia': typeof HistoriaRoute
+  '/acoes': typeof AcoesRouteWithChildren
+  '/projetos': typeof ProjetosRouteWithChildren
+  '/noticias': typeof NoticiasRouteWithChildren
+  '/galeria': typeof GaleriaRoute
+  '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/acoes/$slug': typeof AcoesSlugRoute
+  '/projetos/$slug': typeof ProjetosSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
 }
+
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/biografia' | '/historia' | '/acoes' | '/projetos' | '/noticias' | '/galeria' | '/contato' | '/privacidade' | '/acoes/$slug' | '/projetos/$slug' | '/noticias/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/biografia' | '/historia' | '/acoes' | '/projetos' | '/noticias' | '/galeria' | '/contato' | '/privacidade' | '/acoes/$slug' | '/projetos/$slug' | '/noticias/$slug'
+  id: '__root__' | '/' | '/biografia' | '/historia' | '/acoes' | '/projetos' | '/noticias' | '/galeria' | '/contato' | '/privacidade' | '/acoes/$slug' | '/projetos/$slug' | '/noticias/$slug'
   fileRoutesById: FileRoutesById
 }
+
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BiografiaRoute: typeof BiografiaRoute
+  HistoriaRoute: typeof HistoriaRoute
+  AcoesRoute: typeof AcoesRouteWithChildren
+  ProjetosRoute: typeof ProjetosRouteWithChildren
+  NoticiasRoute: typeof NoticiasRouteWithChildren
+  GaleriaRoute: typeof GaleriaRoute
+  ContatoRoute: typeof ContatoRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +170,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biografia': {
+      id: '/biografia'
+      path: '/biografia'
+      fullPath: '/biografia'
+      preLoaderRoute: typeof BiografiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historia': {
+      id: '/historia'
+      path: '/historia'
+      fullPath: '/historia'
+      preLoaderRoute: typeof HistoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/acoes': {
+      id: '/acoes'
+      path: '/acoes'
+      fullPath: '/acoes'
+      preLoaderRoute: typeof AcoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias': {
+      id: '/noticias'
+      path: '/noticias'
+      fullPath: '/noticias'
+      preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/acoes/$slug': {
+      id: '/acoes/$slug'
+      path: '/$slug'
+      fullPath: '/acoes/$slug'
+      preLoaderRoute: typeof AcoesSlugRouteImport
+      parentRoute: typeof AcoesRoute
+    }
+    '/projetos/$slug': {
+      id: '/projetos/$slug'
+      path: '/$slug'
+      fullPath: '/projetos/$slug'
+      preLoaderRoute: typeof ProjetosSlugRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof NoticiasRoute
+    }
   }
 }
 
+interface AcoesRouteChildren {
+  AcoesSlugRoute: typeof AcoesSlugRoute
+}
+const AcoesRouteChildren: AcoesRouteChildren = {
+  AcoesSlugRoute: AcoesSlugRoute,
+}
+const AcoesRouteWithChildren = AcoesRoute._addFileChildren(AcoesRouteChildren)
+
+interface ProjetosRouteChildren {
+  ProjetosSlugRoute: typeof ProjetosSlugRoute
+}
+const ProjetosRouteChildren: ProjetosRouteChildren = {
+  ProjetosSlugRoute: ProjetosSlugRoute,
+}
+const ProjetosRouteWithChildren = ProjetosRoute._addFileChildren(ProjetosRouteChildren)
+
+interface NoticiasRouteChildren {
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
+}
+const NoticiasRouteChildren: NoticiasRouteChildren = {
+  NoticiasSlugRoute: NoticiasSlugRoute,
+}
+const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(NoticiasRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BiografiaRoute: BiografiaRoute,
+  HistoriaRoute: HistoriaRoute,
+  AcoesRoute: AcoesRouteWithChildren,
+  ProjetosRoute: ProjetosRouteWithChildren,
+  NoticiasRoute: NoticiasRouteWithChildren,
+  GaleriaRoute: GaleriaRoute,
+  ContatoRoute: ContatoRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
 }
+
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()

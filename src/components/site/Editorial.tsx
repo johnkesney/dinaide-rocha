@@ -23,14 +23,15 @@ export function EmptyState({ title, description, compact = false }: { title: str
 }
 
 export function EntryCard({ item, collection }: { item: Entry; collection: "acoes" | "projetos" | "noticias" }) {
-  const href = "/" + collection + "/" + encodeURIComponent(item.slug);
-  return <a className="entry-card" href={href}>
+  // Link preserves client-side navigation and passes a typed dynamic slug.
+  const destination = `/${collection}/$slug` as "/acoes/$slug" | "/projetos/$slug" | "/noticias/$slug";
+  return <Link className="entry-card" to={destination} params={{ slug: item.slug }}>
     <div className="entry-card__visual"><MediaFrame media={item.cover} variant="landscape" label="Imagem da publicação" /></div>
     <div className="entry-card__meta"><span>{item.category || (collection === "projetos" ? "Iniciativa" : "Publicação")}</span><time dateTime={item.publishedAt}>{readableDate(item.publishedAt)}</time></div>
     <h3>{item.title}</h3><p>{item.summary}</p>
     {item.location && <div className="entry-card__location"><MapPin size={14}/>{item.location}</div>}
     <span className="entry-card__more">Ler mais <ArrowRight size={17} /></span>
-  </a>;
+  </Link>;
 }
 
 export function EntryDetailBody({ item }: { item: Entry }) {
