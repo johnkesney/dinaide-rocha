@@ -125,7 +125,7 @@ export const gallery: SiteMedia[] = [
     album: "Retratos institucionais",
     type: "image",
   },
-  ...sambaibaTractorDelivery.photos ?? [],
+  ...(sambaibaTractorDelivery.photos ?? []),
 ];
 
 export function published<T extends { status: PublicationStatus; publishedAt?: string }>(entries: T[]): T[] {
