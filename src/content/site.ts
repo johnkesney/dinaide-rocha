@@ -2,6 +2,8 @@
  * Fonte editorial temporária. Não contém fatos, imagens ou contatos não verificados.
  * Um CMS persistente poderá fornecer estes mesmos contratos no futuro.
  */
+import { sambaibaTractorDelivery } from "./sambaiba";
+
 export type PublicationStatus = "draft" | "published";
 export type OutcomeStatus = "concluida" | "em-andamento" | "encaminhada" | "proposta";
 export type SiteMedia = {
@@ -13,6 +15,10 @@ export type SiteMedia = {
   poster?: string;
 };
 export type Entry = {
+  /** Galeria da matéria, exibida apenas quando o registro for publicado e as mídias estiverem disponíveis. */
+  photos?: SiteMedia[];
+  /** Links externos de referência e de vídeos (não necessariamente documentos oficiais). */
+  externalLinks?: { label: string; url: string }[];
   slug: string;
   title: string;
   summary: string;
@@ -99,11 +105,11 @@ export const site = {
   },
 };
 
-export const actions: Entry[] = [];
+export const actions: Entry[] = [sambaibaTractorDelivery];
 export const projects: Entry[] = [];
 export const news: Entry[] = [];
-export const achievements: Entry[] = [];
-export const community: Entry[] = [];
+export const achievements: Entry[] = [sambaibaTractorDelivery];
+export const community: Entry[] = [sambaibaTractorDelivery];
 export const gallery: SiteMedia[] = [
   {
     src: "/images/dinaide-rosa.webp",

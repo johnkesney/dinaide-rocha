@@ -20,3 +20,13 @@ Para implementar painel com Supabase: criar projeto, disponibilizar URL e chave 
 
 ## Antes da publicação oficial
 Confirmar fotografias e licenças, logotipo, biografia, canais de contato, registros institucionais, política de privacidade revisada, configurações de hospedagem, domínio, SEO, acessibilidade e testes em dispositivos.
+
+## Matéria da entrega de trator — Sambaíba
+O registro editorial está salvo em `src/content/sambaiba.ts` com `status: "draft"`, **não aparece no site** até aprovação expressa. Está referenciado nas coleções de ações, conquistas e comunidade.
+
+Pendências: data, revisão de falas atribuídas, documentos da aquisição e autorização da equipe. As três fotografias entregues foram preparadas localmente para uso, mas os binários precisam ser enviados ao repositório antes de publicar; caminhos reservados:
+- `public/images/sambaiba-entrega-trator-01.webp`
+- `public/images/sambaiba-entrega-trator-02.webp`
+- `public/images/sambaiba-entrega-trator-03.webp`
+
+O vídeo relacionado foi informado como `https://www.instagram.com/reel/DeA44fJRwNU/`; não foi possível conferir seu conteúdo por acesso direto ao Instagram. Nunca alterar o status antes de conferir e subir os arquivos.
