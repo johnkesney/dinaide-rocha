@@ -1,15 +1,11 @@
 import type { Entry } from "./site";
 
 /**
- * REGISTRO EM RASCUNHO — NÃO VISÍVEL NO SITE.
- *
- * Base: informações e 3 fotografias enviadas pela equipe em conversa.
- * Confirmações ainda necessárias:
- * - identificação oficial da associação e localidade;
- * - revisão e autorização das falas atribuídas a Vanda e Joaquim;
- * - autorização final antes de alterar status para "published".
- *
- * Vídeo indicado pela equipe (link não conferido diretamente no Instagram).
+ * Registro de entrega informado pela equipe, com publicação autorizada
+ * expressamente em 22/10/2026. Data do evento: 02/10/2026.
+ * Fotografias fornecidas pela equipe. Depoimentos mantidos como relatos
+ * atribuídos às pessoas citadas. O vídeo do Instagram foi indicado
+ * pela equipe e não foi conferido diretamente.
  */
 export const sambaibaTractorDelivery: Entry = {
   slug: "entrega-trator-comunidade-sambaiba",
@@ -19,7 +15,7 @@ export const sambaibaTractorDelivery: Entry = {
   category: "Comunidade rural",
   location: "Comunidade da Sambaíba, Riacho de Santana — BA",
   publishedAt: "2026-10-02", // Data da entrega informada pela equipe: 02/10/2026.
-  status: "draft",
+  status: "published",
   outcome: "concluida", // Refere-se apenas à entrega fotografada, não a obras ou serviços futuros.
   actionTaken:
     "Segundo as informações enviadas à equipe do site, a vereadora Dinaide Rocha atuou junto aos deputados Manoel Rocha e Penalva para viabilizar o equipamento.",

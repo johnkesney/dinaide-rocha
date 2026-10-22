@@ -22,11 +22,11 @@ Para implementar painel com Supabase: criar projeto, disponibilizar URL e chave 
 Confirmar fotografias e licenças, logotipo, biografia, canais de contato, registros institucionais, política de privacidade revisada, configurações de hospedagem, domínio, SEO, acessibilidade e testes em dispositivos.
 
 ## Matéria da entrega de trator — Sambaíba
-O registro editorial está salvo em `src/content/sambaiba.ts` com `status: "draft"`, **não aparece no site** até aprovação expressa. Está referenciado nas coleções de ações, conquistas e comunidade.
+O registro editorial está salvo em `src/content/sambaiba.ts` com `status: "published"`, após autorização expressa da equipe. Aparece nas coleções de ações, conquistas e comunidade, e suas fotografias constam na galeria.
 
-A entrega ocorreu em **02/10/2026**, conforme data informada pela equipe. Não é necessário anexar documentos de aquisição à matéria. O registro permanece em rascunho até orientação expressa para publicá-lo. As três fotografias recebidas foram otimizadas em WebP e adicionadas ao repositório (a matéria permanece em rascunho); caminhos:
+A entrega ocorreu em **02/10/2026**, conforme data informada pela equipe. Não é necessário anexar documentos de aquisição à matéria. A publicação foi autorizada pela equipe. As três fotografias recebidas foram otimizadas em WebP e adicionadas ao repositório; caminhos:
 - `public/images/sambaiba-entrega-trator-01.webp`
 - `public/images/sambaiba-entrega-trator-02.webp`
 - `public/images/sambaiba-entrega-trator-03.webp`
 
-O vídeo relacionado foi informado como `https://www.instagram.com/reel/DeA44fJRwNU/`; não foi possível conferir seu conteúdo por acesso direto ao Instagram. Nunca alterar o status antes de conferir o conteúdo e receber autorização final.
+O vídeo relacionado foi informado como `https://www.instagram.com/reel/DeA44fJRwNU/`; não foi possível conferir seu conteúdo por acesso direto ao Instagram. O registro foi publicado mediante autorização expressa recebida na conversa.
